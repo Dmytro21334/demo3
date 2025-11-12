@@ -1,0 +1,62 @@
+package org.example.demo3;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class FourthController {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private Button bthClick;
+
+    @FXML
+    private Button bth2Click;
+
+    @FXML
+    void onClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("3view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = (Stage) bthClick.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void on2Click(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("3view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = (Stage) bthClick.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void initialize() {
+        assert bth2Click != null : "fx:id=\"bth2Click\" was not injected: check your FXML file '4view.fxml'.";
+        assert bthClick != null : "fx:id=\"bthClick\" was not injected: check your FXML file '4view.fxml'.";
+
+    }
+}
