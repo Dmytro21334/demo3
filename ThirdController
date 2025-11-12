@@ -1,0 +1,54 @@
+package org.example.demo3;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class ThirdController {
+
+    @FXML
+    private Button btnBack;
+
+    @FXML
+    private Button bthAdd;
+
+    @FXML
+    void onBackClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("2view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void onAddClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("4view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = (Stage) bthAdd.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void initialize() {
+        assert bthAdd != null : "fx:id=\"bthAdd\" was not injected: check your FXML file '3view.fxml'.";
+        assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file '3view.fxml'.";
+
+    }
+}
